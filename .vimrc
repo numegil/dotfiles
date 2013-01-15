@@ -10,10 +10,10 @@ set ai
 
 " " nice indentation
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smartindent
-set softtabstop=4
+set softtabstop=2
 
 :filetype on
 
@@ -42,4 +42,7 @@ endfunction
 set completeopt=longest,menu
 inoremap <Tab> <C-R>=TabComplete()<Cr>
 
+set t_Co=256
 color xoria256
+
+source /home/engshare/admin/scripts/vim/biggrep.vim

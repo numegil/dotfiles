@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/numegil/Projects/dcif/templates/registration'
-let g:netrw_dirhist_2='/Users/numegil/Projects/dcif/accounts'
-let g:netrw_dirhist_3='/Users/numegil/Projects/dcif/dci'
-let g:netrw_dirhist_4='/Users/numegil/Projects/dcif/api'
-let g:netrw_dirhist_5='/Users/numegil/Projects/virtualenvs/dcif/lib/python2.7/site-packages/postman'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home'
+let g:netrw_dirhist_2='/data/users/numegil/www-git/flib/profile/timeline/ui/unit/life_event'
+let g:netrw_dirhist_3='/data/users/numegil/www-git/flib/profile/timeline/ui/unit/life_event/relationship'
+let g:netrw_dirhist_4='/data/users/numegil/www-git/scripts'
