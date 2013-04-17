@@ -44,5 +44,3 @@ inoremap <Tab> <C-R>=TabComplete()<Cr>
 
 set t_Co=256
 color xoria256
-
-source /home/engshare/admin/scripts/vim/biggrep.vim
