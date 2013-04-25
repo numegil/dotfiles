@@ -1,5 +1,7 @@
 alias clearswp="find . -name ".*.swp" | xargs rm -f"
 
+export EDITOR="vim"
+
 # Combines 'cd' and 'ls' into a single command
 function cds(){
   cd $1;
