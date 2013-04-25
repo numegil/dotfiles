@@ -9,8 +9,13 @@ function cds(){
 }
 
 # Provides an alias to get minimize terminal prompt
-alias terminal_min="export PS1='> '"
-alias terminal_max="source ~/.bash_profile"
+function terminal_min() {
+  export PS1_STORED=$PS1;
+  export PS1='> ';
+}
+function terminal_max() {
+  export PS1=`echo "$PS1_STORED"`;
+}
 
 # Combine history between multiple terminals
 HISTSIZE=9000
