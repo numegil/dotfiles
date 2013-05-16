@@ -36,6 +36,11 @@ PROMPT_COMMAND=_bash_history_sync
 # Make git always show stuff in local timezone
 git config --global log.date local
 
+# Git auto-complete
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
 # source ~/.bashrc and ~/.bash_profile_local if they exist
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
