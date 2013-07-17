@@ -20,6 +20,14 @@ function terminal_max() {
 # Combine history between multiple terminals
 export PROMPT_COMMAND="history -a; history -n"
 
+# Make git always show stuff in local timezone
+git config --global log.date local
+
+# Git auto-complete
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
 # source ~/.bashrc and ~/.bash_profile_local if they exist
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
