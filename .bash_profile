@@ -17,9 +17,6 @@ function terminal_max() {
   export PS1=`echo "$PS1_STORED"`;
 }
 
-# Combine history between multiple terminals
-export PROMPT_COMMAND="history -a; history -n"
-
 # Make git always show stuff in local timezone
 git config --global log.date local
 
