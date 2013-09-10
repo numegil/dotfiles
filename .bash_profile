@@ -3,9 +3,14 @@ alias clearswp="find . -name ".*.swp" | xargs rm -f"
 export EDITOR="vim"
 
 # Combines 'cd' and 'ls' into a single command
-function cds(){
+function cds() {
   cd $1;
   ls;
+}
+
+# Replace all text in a directory from $1 to $2
+function replaceall() {
+  find . -type f -print0 | xargs -0 sed -i 's/'$1'/'$2'/g';
 }
 
 # Provides an alias to get minimize terminal prompt
