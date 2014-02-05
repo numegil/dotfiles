@@ -1,4 +1,6 @@
 alias clearswp="find . -name ".*.swp" | xargs rm -f"
+alias g="git"
+alias v="vim"
 
 export EDITOR="vim"
 
