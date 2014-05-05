@@ -42,5 +42,10 @@ endfunction
 set completeopt=longest,menu
 inoremap <Tab> <C-R>=TabComplete()<Cr>
 
+" See http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+
+" Set color scheme
 set t_Co=256
 color xoria256
