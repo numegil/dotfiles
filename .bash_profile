@@ -40,4 +40,4 @@ fi
 
 set -o vi
 
-python day_of_week.py
+python ~/day_of_week.py
