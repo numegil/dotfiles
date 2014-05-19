@@ -44,7 +44,10 @@ inoremap <Tab> <C-R>=TabComplete()<Cr>
 
 " See http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>w :wa<CR>
+nnoremap <Leader>q :wq<CR>
+nnoremap <Leader>n :noh<CR>
+nnoremap <Leader>p :set paste!<CR>
 
 " Set color scheme
 set t_Co=256
