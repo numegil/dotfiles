@@ -44,3 +44,5 @@ if [ -f ~/.bash_profile_local ]; then
 fi
 
 set -o vi
+
+python day_of_week.py
