@@ -1,3 +1,4 @@
+import time
 import random
 from datetime import date
 
@@ -14,10 +15,12 @@ def get_random_date():
 while True:
   random_date = get_random_date()
   print 'On what day of the week was', random_date.strftime('%b %d, %Y') + '?'
+  start_time = time.time()
 
   weekday_guess = raw_input()
   if weekday_guess == random_date.strftime('%w'):
-    print 'Yup!'
+    time_elapsed = time.time() - start_time
+    print 'Yup! That took %.2f seconds' % time_elapsed
     quit()
   else:
     print 'Nope, it was actually a', random_date.strftime('%A')
