@@ -21,6 +21,9 @@ function terminal_max() {
 
 alias cls="clear && tmux clear-history";
 
+# Make other aliases work with sudo
+alias sudo='sudo '
+
 # Make git always show stuff in local timezone
 git config --global log.date local
 
