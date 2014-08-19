@@ -3,6 +3,10 @@ import random
 from datetime import date
 
 MAX_YEARS_BACK = 200
+PROBABILITY_OF_QUESTION = .1
+
+if random.random() > PROBABILITY_OF_QUESTION:
+  quit()
 
 def get_random_date():
   # http://www.wolframalpha.com/input/?i=beta+distribution%2C+alpha%3D1.5%2C+beta%3D5
