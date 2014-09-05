@@ -49,6 +49,9 @@ nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>n :noh<CR>
 nnoremap <Leader>p :set paste!<CR>
 
+" Automatically remove trailing whitespace
+autocmd BufWritePre *.py :%s/\s\+$//e
+
 " Set color scheme
 set t_Co=256
 color xoria256
