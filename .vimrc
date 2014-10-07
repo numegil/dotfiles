@@ -51,7 +51,7 @@ nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>t :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Automatically remove trailing whitespace
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Set color scheme
 set t_Co=256
