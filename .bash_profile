@@ -1,6 +1,11 @@
 alias clearswp="find . -name ".*.swp" | xargs rm -f"
+
+alias a='arc'
 alias g="git"
 alias v="vim"
+
+alias rd='git commit -a --amend --no-edit && arc diff --only'
+alias rdd='git commit -a --amend --no-edit && arc diff'
 
 export EDITOR="vim"
 
@@ -10,12 +15,22 @@ function cds() {
   ls;
 }
 
+alias ap="arc patch --nobranch "
+
+# git reset
+function gr() {
+  for i in $(eval echo {1..$1})
+  do
+    git reset --hard HEAD^
+  done
+}
+
 # Provides an alias to get minimize terminal prompt
-function terminal_min() {
+function tmin() {
   export PS1_STORED=$PS1;
   export PS1='> ';
 }
-function terminal_max() {
+function tmax() {
   export PS1=`echo "$PS1_STORED"`;
 }
 
