@@ -15,8 +15,6 @@ function cds() {
   ls;
 }
 
-alias ap="arc patch --nobranch "
-
 # git reset
 function gr() {
   for i in $(eval echo {1..$1})

@@ -48,6 +48,7 @@ nnoremap <Leader>w :wa<CR>
 nnoremap <Leader>q :wq<CR>
 nnoremap <Leader>n :noh<CR>
 nnoremap <Leader>p :set paste!<CR>
+nnoremap <Leader>t :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Automatically remove trailing whitespace
 autocmd BufWritePre *.py :%s/\s\+$//e
