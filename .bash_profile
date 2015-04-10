@@ -3,6 +3,7 @@ alias clearswp="find . -name ".*.swp" | xargs rm -f"
 alias a='arc'
 alias g="git"
 alias v="vim"
+alias vt="vim -t"
 
 alias rd='git commit -a --amend --no-edit && arc diff --only'
 alias rdd='git commit -a --amend --no-edit && arc diff'
@@ -14,6 +15,10 @@ function cds() {
   cd $1;
   ls;
 }
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # git reset
 function gr() {
