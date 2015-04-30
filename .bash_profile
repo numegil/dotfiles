@@ -8,6 +8,8 @@ alias vt="vim -t"
 alias rd='git commit -a --amend --no-edit && arc diff --only'
 alias rdd='git commit -a --amend --no-edit && arc diff'
 
+alias rd="git commit -a --amend --no-edit && arc diff --only"
+
 export EDITOR="vim"
 
 # Combines 'cd' and 'ls' into a single command
@@ -35,6 +37,11 @@ function tmin() {
 }
 function tmax() {
   export PS1=`echo "$PS1_STORED"`;
+}
+
+# Replace all text in a directory from $1 to $2
+function replace_all() {
+  find . -type f -print0 | xargs -0 sed -i '' -e 's/'$1'/'$2'/g';
 }
 
 alias cls="clear && tmux clear-history";
