@@ -50,6 +50,8 @@ nnoremap <Leader>n :noh<CR>
 nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>t :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+command! -nargs=1 Vs execute "vert stag" <q-args>
+
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 

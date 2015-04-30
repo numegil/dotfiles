@@ -4,6 +4,7 @@ alias a='arc'
 alias g="git"
 alias v="vim"
 alias vt="vim -t"
+alias x="exit"
 
 alias rd='git commit -a --amend --no-edit && arc diff --only'
 alias rdd='git commit -a --amend --no-edit && arc diff'
