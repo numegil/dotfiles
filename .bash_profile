@@ -2,14 +2,16 @@ alias clearswp="find . -name ".*.swp" | xargs rm -f"
 
 alias a='arc'
 alias g="git"
+alias m="hg"
 alias v="vim"
 alias vt="vim -t"
 alias x="exit"
 
-alias rd='git commit -a --amend --no-edit && arc diff --only'
-alias rdd='git commit -a --amend --no-edit && arc diff'
+alias rd='git add . && git commit -a --amend --no-edit && arc diff --only'
+alias rdd='git add . && git commit -a --amend --no-edit && arc diff'
+alias new="git add . && git commit -am 'temp' && arc diff --only"
 
-alias rd="git commit -a --amend --no-edit && arc diff --only"
+alias jk='git checkout HEAD^'
 
 export EDITOR="vim"
 
@@ -30,6 +32,10 @@ function gr() {
     git reset --hard HEAD^
   done
 }
+
+alias gl="git log"
+alias gs="git status"
+alias gb="git branch"
 
 # Provides an alias to get minimize terminal prompt
 function tmin() {

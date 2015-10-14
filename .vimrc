@@ -18,7 +18,7 @@ set softtabstop=2
 :filetype on
 
 :set makeprg=make\ %<\ LDLIBS=\"-lm\"\ CFLAGS=\"-Wall\ -O2\ -static\"\ CPPFLAGS=\"-Wall\ -O2\ -static\"
- 
+
 syntax enable
 
 if &ft == 'phpt'
@@ -58,3 +58,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Set color scheme
 set t_Co=256
 color xoria256
+
+:set cursorline
