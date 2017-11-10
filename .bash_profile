@@ -11,9 +11,14 @@ alias rd='git add . && git commit -a --amend --no-edit && arc diff --only'
 alias rdd='git add . && git commit -a --amend --no-edit && arc diff'
 alias new="git add . && git commit -am 'temp' && arc diff --only"
 alias neww="git add . && git commit -am 'temp' && arc diff"
+
 alias jk='git checkout HEAD^'
 alias gpl='git pull --rebase'
 alias rml="rm .git/index.lock"
+
+function ap() {
+  arc export --revision $1 --git > ~/temp/arc.patch && arc patch --nobranch --patch ~/temp/arc.patch && arc amend --revision $1;
+}
 
 export EDITOR="vim"
 
