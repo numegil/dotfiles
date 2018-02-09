@@ -45,6 +45,8 @@ alias gs="git status"
 alias gb="git branch"
 alias gls="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset %s %Creset'"
 
+alias ms="hg status"
+
 # Provides an alias to get minimize terminal prompt
 function tmin() {
   export PS1_STORED=$PS1;
