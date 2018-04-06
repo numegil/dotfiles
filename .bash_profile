@@ -43,6 +43,7 @@ function gr() {
 alias gl="git log"
 alias gs="git status"
 alias gb="git branch"
+alias gls="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset %s %Creset'"
 
 # Provides an alias to get minimize terminal prompt
 function tmin() {
