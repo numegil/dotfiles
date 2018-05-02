@@ -7,13 +7,6 @@ alias v="vim"
 alias vt="vim -t"
 alias x="exit"
 
-alias rd='git add . && git commit -a --amend --no-edit && arc diff --only'
-alias rdd='git add . && git commit -a --amend --no-edit && arc diff'
-alias new="git add . && git commit -am 'temp' && arc diff --only"
-alias neww="git add . && git commit -am 'temp' && arc diff"
-
-alias jk='git checkout HEAD^'
-alias gpl='git pull --rebase'
 alias rml="rm .git/index.lock"
 
 function ap() {
@@ -40,12 +33,34 @@ function gr() {
   done
 }
 
-alias gl="git log"
-alias gs="git status"
-alias gb="git branch"
-alias gls="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset %s %Creset'"
+function git_mode() {
+  alias rd='git add . && git commit -a --amend --no-edit && arc diff --only'
+  alias rdd='git add . && git commit -a --amend --no-edit && arc diff'
+  alias new="git add . && git commit -am 'temp' && arc diff --only"
+  alias neww="git add . && git commit -am 'temp' && arc diff"
 
-alias ms="hg status"
+  alias jk='git checkout HEAD^'
+  alias gpl='git pull --rebase'
+
+  alias gl="git log"
+  alias gs="git status"
+  alias gb="git branch"
+  alias gls="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset %s %Creset'"
+}
+
+function hg_mode() {
+  alias rb="hg pull && hg up master && cook && hh"
+  alias new="hg addremove && hg commit -m 'temp' && arc diff --only"
+  alias rd="hg addremove && hg amend --rebase && arc diff --only"
+  alias rdd="hg addremove && hg amend --rebase && arc diff"
+  alias jk="hg revert -r .^"
+
+  alias ms="hg status"
+  alias ml="hg smartlog"
+
+}
+
+git_mode
 
 # Provides an alias to get minimize terminal prompt
 function tmin() {
