@@ -50,9 +50,9 @@ function git_mode() {
 
 function hg_mode() {
   alias rb="hg pull && hg up master && cook && hh"
-  alias new="hg addremove && hg commit -m 'temp' && arc diff --only"
-  alias rd="hg addremove && hg amend --rebase && arc diff --only"
-  alias rdd="hg addremove && hg amend --rebase && arc diff"
+  alias new="hg addremove && hg commit -m 'temp' && jf preview"
+  alias rd="hg addremove && hg amend --rebase && jf preview"
+  alias rdd="hg addremove && hg amend --rebase && jf submit"
   alias jk="hg revert -r .^"
 
   alias ms="hg status"
