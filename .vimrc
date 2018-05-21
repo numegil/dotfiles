@@ -15,6 +15,9 @@ set shiftwidth=2
 set smartindent
 set softtabstop=2
 
+" Don't overwrite system clipboard on Windows
+:set clipboard=
+
 :filetype on
 
 :set makeprg=make\ %<\ LDLIBS=\"-lm\"\ CFLAGS=\"-Wall\ -O2\ -static\"\ CPPFLAGS=\"-Wall\ -O2\ -static\"
