@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 " some smart options
 set nocompatible
 set backspace=indent,eol,start
@@ -57,6 +59,10 @@ command! -nargs=1 Vs execute "vert stag" <q-args>
 
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+cmap hs HackSearch
+:autocmd FileType qf nnoremap :cclose
+nnoremap <Leader>h :cclose<CR>
 
 " Set color scheme
 set t_Co=256
