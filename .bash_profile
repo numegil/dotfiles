@@ -17,7 +17,7 @@ export EDITOR="vim"
 
 # Combines 'cd' and 'ls' into a single command
 function cds() {
-  cd $1;
+  cd "$1";
   ls;
 }
 
