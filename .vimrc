@@ -61,7 +61,7 @@ command! -nargs=1 Vs execute "vert stag" <q-args>
 autocmd BufWritePre * :%s/\s\+$//e
 
 cmap hs HackSearch
-:autocmd FileType qf nnoremap :cclose
+:autocmd! FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
 nnoremap <Leader>h :cclose<CR>
 
 " Set color scheme
