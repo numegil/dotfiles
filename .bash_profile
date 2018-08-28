@@ -58,6 +58,7 @@ function hg_mode() {
   alias ms="hg status"
   alias ml="hg smartlog"
 
+  alias fillin="jf template && hg commit --amend"
 }
 
 git_mode
