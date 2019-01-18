@@ -59,6 +59,10 @@ function hg_mode() {
   alias ml="hg smartlog"
 
   alias fillin="jf template && hg commit --amend"
+
+  function take() {
+    hg graft -r "$1" && hg strip -r "$1";
+  }
 }
 
 git_mode
