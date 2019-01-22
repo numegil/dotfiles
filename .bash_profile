@@ -99,6 +99,9 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+# reminder to self:
+# alias dev="mosh -6 <server> -- tmux attach -t 0 -d"
+
 if [ -f ~/.bash_profile_local ]; then
     source ~/.bash_profile_local
 fi
