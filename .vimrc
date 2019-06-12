@@ -68,4 +68,29 @@ nnoremap <Leader>h :cclose<CR>
 set t_Co=256
 color xoria256
 
-:set cursorline
+set cursorline
+set lazyredraw
+set smartcase
+set ignorecase
+set undofile
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Disable typechecking on save
+let g:hack#enable = 0
+
+" Auto-completion
+let g:hack#omnifunc=1
+autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
+
+" TBGS
+source ~/.vim/biggrep.vim
+cmap tbgs TBGS
+cmap tbgr TBGS
+cmap tw TBGW
+
+let @x ='f(li	q€kb'
+let @c ='f,lli€kbq€kb'
+let @v = 'f)i,€kb'

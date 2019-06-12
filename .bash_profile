@@ -56,7 +56,8 @@ function hg_mode() {
   alias jk="hg revert -r .^"
 
   alias ms="hg status"
-  alias ml="hg smartlog"
+  alias ml="hg sl"
+  alias msl="hg smartlog"
 
   alias fillin="jf template && hg commit --amend"
 
