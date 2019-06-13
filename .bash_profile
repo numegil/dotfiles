@@ -9,10 +9,6 @@ alias x="exit"
 
 alias rml="rm .git/index.lock"
 
-function ap() {
-  arc export --revision $1 --git > ~/temp/arc.patch && arc patch --nobranch --patch ~/temp/arc.patch && arc amend --revision $1;
-}
-
 export EDITOR="vim"
 
 # Combines 'cd' and 'ls' into a single command
@@ -21,9 +17,10 @@ function cds() {
   ls;
 }
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias -- -='cd - && ls'
+alias ..="cd .. && ls"
+alias ...="cd ../.. && ls"
+alias ....="cd ../../.. && ls"
 
 # git reset
 function gr() {
@@ -45,6 +42,7 @@ function git_mode() {
   alias gl="git log"
   alias gs="git status"
   alias gb="git branch"
+  alias gd="git diff"
   alias gls="git log --pretty=format:'%Cred%h%Creset - %Cgreen(%cr) %C(bold blue)<%an>%C(yellow)%d%Creset %s %Creset'"
 }
 
@@ -56,6 +54,7 @@ function hg_mode() {
   alias jk="hg revert -r .^"
 
   alias ms="hg status"
+  alias md="hg diff"
   alias ml="hg sl"
   alias msl="hg smartlog"
 
