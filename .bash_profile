@@ -82,6 +82,7 @@ function replace_all() {
 }
 
 alias cls="clear && tmux clear-history";
+alias c="clear && tmux clear-history";
 
 # Make other aliases work with sudo
 alias sudo='sudo '
