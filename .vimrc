@@ -60,10 +60,6 @@ command! -nargs=1 Vs execute "vert stag" <q-args>
 " Automatically remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-cmap hs HackSearch
-:autocmd! FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
-nnoremap <Leader>h :cclose<CR>
-
 " Set color scheme
 set t_Co=256
 color xoria256
@@ -78,6 +74,22 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+let @x ='f(li	q€kb'
+let @c ='f,lli€kbq€kb'
+let @v = 'f)i,€kb'
+
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+
+" FB stuff
+
+cmap hs HackSearch
+:autocmd! FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
+nnoremap <Leader>h :cclose<CR>
+
 " Disable typechecking on save
 let g:hack#enable = 0
 
@@ -86,11 +98,7 @@ let g:hack#omnifunc=1
 autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
 " TBGS
-source ~/.vim/biggrep.vim
+call SourceIfExists("~/.vim/biggrep.vim")
 cmap tbgs TBGS
 cmap tbgr TBGS
 cmap tw TBGW
-
-let @x ='f(li	q€kb'
-let @c ='f,lli€kbq€kb'
-let @v = 'f)i,€kb'
