@@ -95,6 +95,14 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
+# Date format in bash history file.
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+shopt -s histappend
+export HISTIGNORE="ls:ps:history"
+shopt -s cmdhist
+
 # source ~/.bashrc and ~/.bash_profile_local if they exist
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
