@@ -57,6 +57,7 @@ function hg_mode() {
   alias md="hg diff"
   alias ml="hg sl"
   alias msl="hg smartlog"
+  alias mut="hg up tip"
 
   alias fillin="jf template && hg commit --amend"
 
