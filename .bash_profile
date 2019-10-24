@@ -56,6 +56,7 @@ function hg_mode() {
   alias ms="hg status"
   alias md="hg diff"
   alias ml="hg sl"
+  alias mm="hg metaedit"
   alias msl="hg smartlog"
   alias mut="hg up tip"
 
