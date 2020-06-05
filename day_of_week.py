@@ -1,11 +1,12 @@
-import time
-import random
 from datetime import date
+import random
+import sys
+import time
 
 MAX_YEARS_BACK = 200
 PROBABILITY_OF_QUESTION = .1
 
-if random.random() > PROBABILITY_OF_QUESTION:
+if len(sys.argv) <= 1 and random.random() > PROBABILITY_OF_QUESTION:
   quit()
 
 def get_random_date():
