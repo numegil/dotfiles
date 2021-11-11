@@ -5,10 +5,12 @@ set nocompatible
 set backspace=indent,eol,start
 set autoindent
 set ruler showcmd
+set nonumber
 set hls ic is
 set showmatch
 set bg=dark
 set ai
+set textwidth=0
 
 " " nice indentation
 set expandtab
