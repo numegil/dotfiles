@@ -134,3 +134,20 @@ command! -range -nargs=1 HackFmt <line1>,<line2>call HackFmt(<args>)
 
 map <leader>k :HackFmt<Home>silent <End> 80<CR>
 map <leader>K :%HackFmt<Home>silent <End> 80<CR>
+
+
+let g:ale_hack_hack_executable = 'hh'
+let g:ale_linters = { 'hack': ['hack', 'aurora'] }
+
+let g:ale_completion_enabled = 1
+let g:ale_echo_msg_format = '[%linter%]% [code]% %s'
+nnoremap <silent> K :ALEHover<CR>
+nnoremap <silent> gd :ALEGoToDefinition -vsplit<CR>
+nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition -vsplit<CR>
+
+" show type on hover
+if v:version >= 801
+  set balloonevalterm
+  let g:ale_set_balloons = 1
+  let balloondelay = 250
+endif
