@@ -119,4 +119,8 @@ fi
 
 set -o vi
 
+# Include hidden files with cp, mv, etc.
+shopt -s dotglob nullglob
+
 python ~/day_of_week.py
+
