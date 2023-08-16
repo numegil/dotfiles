@@ -22,6 +22,8 @@ alias ..="cd .. && ls"
 alias ...="cd ../.. && ls"
 alias ....="cd ../../.. && ls"
 
+alias ll="ls -l"
+
 # git reset
 function gr() {
   for i in $(eval echo {1..$1})

@@ -22,7 +22,7 @@ while True:
   print('On what day of the week was', random_date.strftime('%b %d, %Y') + '?')
   start_time = time.time()
 
-  weekday_guess = raw_input()
+  weekday_guess = input()
   if weekday_guess == random_date.strftime('%w'):
     time_elapsed = time.time() - start_time
     print('Yup! That took %.2f seconds' % time_elapsed)
