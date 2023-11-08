@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 " some smart options
 set nocompatible
 set backspace=indent,eol,start
@@ -57,6 +55,9 @@ nnoremap <Leader>n :noh<CR>
 nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>t :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+nnoremap <Leader>o :mksession! my_session.vim<CR>:only<CR>
+nnoremap <Leader>i :source my_session.vim<CR>
+
 command! -nargs=1 Vs execute "vert stag" <q-args>
 
 " Automatically remove trailing whitespace
@@ -85,69 +86,3 @@ function! SourceIfExists(file)
     exe 'source' a:file
   endif
 endfunction
-
-" FB stuff
-
-cmap hs HackSearch
-:autocmd! FileType qf nnoremap <buffer> <leader><Enter> <C-w><Enter><C-w>L
-nnoremap <Leader>h :cclose<CR>
-
-" Disable typechecking on save
-let g:hack#enable = 0
-
-" Auto-completion
-let g:hack#omnifunc=1
-autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
-
-" TBGS
-call SourceIfExists("~/.vim/biggrep.vim")
-cmap tbgs TBGS
-cmap tbgr TBGS
-cmap tw TBGW
-
-let @x ='f(li	q€kb'
-let @c ='f,lli€kbq€kb'
-let @v = 'f)i,€kb'
-
-""""""""""""""""""""""""""""""""""""""""""
-" hackfmt on range
-""""""""""""""""""""""""""""""""""""""""""
-function! HackFmt(width) range
-  let start = a:firstline
-  let end = a:lastline
-  " current range contents, for comparison
-  let curr = join(getline(start, end), "\n")."\n"
-  " the replacement command (passes the full buffer as stdin)
-  let cmd = "hackfmt --line-width=".a:width." --range ".line2byte(start)." ".line2byte(end+1)
-  let output = system(cmd, join(getline(1, '$'), "\n"))
-
-  " if they are the (case-sensitive) same, then don't touch the file
-  if curr ==# output
-    return
-  endif
-
-  " otherwise, delete what's there and put the new output
-  execute start.",".end."d"
-  execute start-1."put =output"
-endfunction
-command! -range -nargs=1 HackFmt <line1>,<line2>call HackFmt(<args>)
-
-map <leader>k :HackFmt<Home>silent <End> 80<CR>
-map <leader>K :%HackFmt<Home>silent <End> 80<CR>
-
-
-let g:ale_hack_hack_executable = 'hh'
-let g:ale_linters = { 'hack': ['hack', 'aurora'] }
-
-let g:ale_completion_enabled = 1
-let g:ale_echo_msg_format = '[%linter%]% [code]% %s'
-nnoremap <silent> K :ALEHover<CR>
-nnoremap <silent> gd :ALEGoToDefinition -vsplit<CR>
-nnoremap <M-LeftMouse> <LeftMouse>:ALEGoToDefinition -vsplit<CR>
-
-" show type on hover
-if v:version >= 801
-  set balloonevalterm
-  let g:ale_set_balloons = 1
-  let balloondelay = 250
-endif
