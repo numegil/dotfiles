@@ -55,8 +55,8 @@ nnoremap <Leader>n :noh<CR>
 nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>t :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
-nnoremap <Leader>o :mksession! my_session.vim<CR>:only<CR>
-nnoremap <Leader>i :source my_session.vim<CR>
+nnoremap <Leader>o :mksession! ~/my_session.vim<CR>:only<CR>
+nnoremap <Leader>i :source ~/my_session.vim<CR>
 
 command! -nargs=1 Vs execute "vert stag" <q-args>
 
