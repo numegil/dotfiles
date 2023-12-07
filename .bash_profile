@@ -17,6 +17,13 @@ function cds() {
   ls;
 }
 
+# Print all contents of files by filetype, recursive.
+function echoall() {
+  for ext in "$@"; do
+    find . -name "*.$ext" -exec echo '// {}' \; -exec cat {} \; -exec echo '' \;
+  done
+}
+
 alias -- -='cd - && ls'
 alias ..="cd .. && ls"
 alias ...="cd ../.. && ls"
@@ -125,4 +132,5 @@ set -o vi
 shopt -s dotglob nullglob
 
 python3 ~/day_of_week.py
+
 
