@@ -6,6 +6,7 @@ alias m="hg"
 alias v="vim"
 alias vt="vim -t"
 alias x="exit"
+alias dl="delta"
 
 alias rml="rm .git/index.lock"
 
