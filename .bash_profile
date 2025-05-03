@@ -131,6 +131,7 @@ set -o vi
 # Include hidden files with cp, mv, etc.
 shopt -s dotglob nullglob
 
-python3 ~/day_of_week.py
-
-
+# Only run in interactive shells
+if [[ $- == *i* ]]; then
+    python3 ~/day_of_week.py
+fi
